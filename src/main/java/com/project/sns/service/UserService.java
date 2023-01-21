@@ -5,10 +5,10 @@ import com.project.sns.exception.SnsApplicationException;
 import com.project.sns.model.User;
 import com.project.sns.model.entity.UserEntity;
 import com.project.sns.repository.UserEntityRepository;
+import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -38,7 +38,6 @@ public class UserService {
         }
 
         //토큰 생성
-
 
         return "";
     }
