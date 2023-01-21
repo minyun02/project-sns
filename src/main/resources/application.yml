@@ -2,7 +2,7 @@ spring:
   config.activate.on-profile: heroku
   datasource:
     hikari.maximum-pool-size: 4
-    url: jdbc:mysql://bc14d26dfd4751:1a6fac4d@us-cdbr-east-06.cleardb.net/heroku_c049d90fa5c4ed3?reconnect=true
+    url:
     driver-class-name: com.mysql.jdbc.Driver
   jpa:
     properties:
