@@ -1,9 +1,9 @@
 spring:
   config.activate.on-profile: heroku
   datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    
     hikari.maximum-pool-size: 4
-    url:
-    driver-class-name: com.mysql.jdbc.Driver
   jpa:
     properties:
       hibernate:
