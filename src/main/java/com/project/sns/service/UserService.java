@@ -8,24 +8,29 @@ import com.project.sns.repository.UserEntityRepository;
 import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
 public class UserService {
 
     private final UserEntityRepository userEntityRepository;
+    private final BCryptPasswordEncoder encoder;
 
+    @Transactional
     public User join(String userName, String password) {
         //회원가입하려는 userName으로 중복 회원가입 여부 판단
         userEntityRepository.findByUserName(userName).ifPresent(it -> {
+            System.out.println("??");
             throw new SnsApplicationException(ErrorCode.DUPLICATED_USER_NAME, String.format("%s is duplicated", userName));
         });
 
         //회원가임 진행 = user 등록
-        UserEntity userEntity = userEntityRepository.save(UserEntity.of(userName, password));
-
-        return User.fromUserEntity(userEntity);
+        UserEntity userEntity = userEntityRepository.save(UserEntity.of(userName, encoder.encode(password)));
+        throw new RuntimeException();
+//        return User.fromUserEntity(userEntity);
     }
 
     public String login(String userName, String password) {
