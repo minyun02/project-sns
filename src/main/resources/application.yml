@@ -14,3 +14,8 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
+
+jwt:
+  secret-key: project.sns-application-2023.secret_key
+  #30일
+  token.expired-time-ms: 2592000000
