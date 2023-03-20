@@ -1,15 +1,15 @@
 spring:
-  h2:
-    path: /h2-console
-    console:
-      enabled: true
+#  h2:
+#    path: /h2-console
+#    console:
+#      enabled: true
   datasource:
-    url: jdbc:h2:~/test
-    username: sa
-    password:
-    hikari:
-      jdbc-url: jdbc:h2:mem:testdb;MODE=MYSQL
-    driver-class-name: org.h2.Driver
+#    url: jdbc:h2:~/test
+#    username: sa
+#    password:
+#    hikari:
+#      jdbc-url: jdbc:h2:mem:testdb;MODE=MYSQL
+#    driver-class-name: org.h2.Driver
   #    driver-class-name: com.mysql.cj.jdbc.Driver
   #    url: jdbc:mysql://bc14d26dfd4751:1a6fac4d@us-cdbr-east-06.cleardb.net/heroku_c049d90fa5c4ed3?reconnect=true
 #    username: bc14d26dfd4751
@@ -24,6 +24,9 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
+
+  redis:
+    url: redis://:p8909dcb9a317bb601882c3e0eb58199ffce8862bec62edc59674ec3ae9c097ad@ec2-52-20-170-81.compute-1.amazonaws.com:28949
 
 jwt:
   secret-key: project.sns-application-2023.secret_key

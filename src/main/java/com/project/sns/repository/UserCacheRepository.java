@@ -10,7 +10,7 @@ import java.time.Duration;
 import java.util.Optional;
 
 @Slf4j
-//@Repository
+@Repository
 @RequiredArgsConstructor
 public class UserCacheRepository {
 
