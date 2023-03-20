@@ -17,7 +17,7 @@ import java.sql.Timestamp;
 public class AlarmResponse {
     private Integer id;
     private AlarmType alarmType;
-    private AlarmArgs args;
+    private AlarmArgs alarmArgs;
     private String text;
     private Timestamp registeredAt;
     private Timestamp updatedAt;
@@ -27,7 +27,7 @@ public class AlarmResponse {
         return new AlarmResponse(
                 alarm.getId(),
                 alarm.getAlarmType(),
-                alarm.getArgs(),
+                alarm.getAlarmArgs(),
                 alarm.getAlarmType().getAlarmText(),
                 alarm.getRegisteredAt(),
                 alarm.getUpdatedAt(),

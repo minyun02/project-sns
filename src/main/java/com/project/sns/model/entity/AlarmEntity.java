@@ -1,6 +1,5 @@
 package com.project.sns.model.entity;
 
-import com.mysql.cj.protocol.ColumnDefinition;
 import com.project.sns.model.AlarmArgs;
 import com.project.sns.model.AlarmType;
 import com.vladmihalcea.hibernate.type.json.JsonBinaryType;
@@ -42,7 +41,7 @@ public class AlarmEntity {
 
     @Type(type = "jsonb")
     @Column(columnDefinition = "json")
-    private AlarmArgs alarmArgs;
+    private AlarmArgs args;
 
     @Column(name = "registered_at")
     private Timestamp registeredAt;
@@ -63,7 +62,7 @@ public class AlarmEntity {
         AlarmEntity entity = new AlarmEntity();
         entity.setUser(userEntity);
         entity.setAlarmType(alarmType);
-        entity.setAlarmArgs(args);
+        entity.setArgs(args);
         return entity;
     }
 }

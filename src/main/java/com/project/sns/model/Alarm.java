@@ -12,7 +12,7 @@ public class Alarm {
     private Integer id;
     private User user;
     private AlarmType alarmType;
-    private AlarmArgs args;
+    private AlarmArgs alarmArgs;
     private Timestamp registeredAt;
     private Timestamp updatedAt;
     private Timestamp deletedAt;
@@ -22,7 +22,7 @@ public class Alarm {
                 entity.getId(),
                 User.fromUserEntity(entity.getUser()),
                 entity.getAlarmType(),
-                entity.getAlarmArgs(),
+                entity.getArgs(),
                 entity.getRegisteredAt(),
                 entity.getUpdatedAt(),
                 entity.getDeletedAt()
